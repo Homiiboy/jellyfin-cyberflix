@@ -1,0 +1,32 @@
+@media (max-width: 600px) {
+    body::before {
+        background-size: 45px 45px;
+    }
+
+    .homePage .sectionTitle {
+        font-size: 1.32em !important;
+    }
+
+    .card:hover {
+        transform: none;
+    }
+
+    .backdropImage {
+        transform: scale(1.03);
+        filter: brightness(.48) saturate(1.08);
+    }
+
+    .detailPagePrimaryContainer .itemName {
+        font-size: 2.2em !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
