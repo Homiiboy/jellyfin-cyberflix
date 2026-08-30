@@ -13,6 +13,9 @@ ORDER = [
 ]
 
 parts = [(ROOT / "src" / name).read_text(encoding="utf-8").rstrip() for name in ORDER]
-header = "/*! CyberFlix for Jellyfin — built from /src */\n\n"
-(ROOT / "dist" / "theme.css").write_text(header + "\n\n".join(parts) + "\n", encoding="utf-8")
-print("Built dist/theme.css")
+header = "/*! CyberFlix for Jellyfin — standalone bundle built from /src */\n\n"
+(ROOT / "dist" / "bundle.css").write_text(
+    header + "\n\n".join(parts) + "\n",
+    encoding="utf-8",
+)
+print("Built dist/bundle.css")
