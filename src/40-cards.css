@@ -1,0 +1,116 @@
+.card {
+    position: relative;
+    z-index: 1;
+    transform: translateZ(0);
+    transition:
+        transform 240ms cubic-bezier(.2,.8,.2,1) var(--cf-hover-delay),
+        filter 240ms ease var(--cf-hover-delay);
+}
+
+.cardBox,
+.cardScalable {
+    overflow: visible !important;
+}
+
+.cardImageContainer {
+    border-radius: var(--cf-radius) !important;
+    overflow: hidden !important;
+    outline: 1px solid rgba(255,255,255,.07);
+    outline-offset: -1px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.48);
+    transition: outline-color 240ms ease, box-shadow 240ms ease, filter 240ms ease;
+}
+
+.cardContent,
+.blurhash-canvas,
+.cardOverlayContainer {
+    border-radius: var(--cf-radius) !important;
+}
+
+.card-hoverable:hover,
+.card:hover {
+    z-index: 100;
+    transform: translateY(-9px) scale(1.05);
+}
+
+.card-hoverable:hover .cardImageContainer,
+.card:hover .cardImageContainer {
+    outline-color: rgba(255,255,255,.30);
+    filter: brightness(1.04) saturate(1.06);
+    box-shadow:
+        0 30px 65px rgba(0,0,0,.82),
+        -4px 0 14px rgba(0,234,255,.08),
+        4px 0 14px rgba(255,43,214,.06);
+}
+
+.cardOverlayContainer {
+    background: linear-gradient(
+        to top,
+        rgba(2,3,5,1) 0%,
+        rgba(2,3,5,.98) 18%,
+        rgba(2,3,5,.88) 35%,
+        rgba(2,3,5,.60) 52%,
+        rgba(2,3,5,.24) 69%,
+        rgba(2,3,5,.04) 84%,
+        transparent 100%
+    ) !important;
+}
+
+.cardOverlayContainer > .cardOverlayFab-primary {
+    background: #fff !important;
+    color: #050609 !important;
+    width: 3.5em !important;
+    height: 3.5em !important;
+    min-width: 3.5em !important;
+    min-height: 3.5em !important;
+    border: 0 !important;
+    border-radius: 50% !important;
+    padding: 0 !important;
+    box-shadow: 0 10px 28px rgba(0,0,0,.65);
+    transition: transform 180ms ease, box-shadow 180ms ease !important;
+}
+
+.cardOverlayContainer > .cardOverlayFab-primary:hover {
+    transform: scale(1.10) !important;
+    background: #fff !important;
+    color: #050609 !important;
+    box-shadow: 0 14px 32px rgba(0,0,0,.72), 0 0 15px rgba(255,255,255,.14);
+}
+
+.cardOverlayButtonIcon {
+    background: rgba(18,19,22,.96) !important;
+    color: #fff !important;
+    border: 1.7px solid rgba(255,255,255,.68);
+    border-radius: 50% !important;
+    box-shadow: 0 6px 16px rgba(0,0,0,.48);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
+}
+
+.cardOverlayButton:hover .cardOverlayButtonIcon {
+    border-color: #fff;
+    background: rgba(35,36,40,1) !important;
+    transform: scale(1.09);
+}
+
+.cardText {
+    color: rgba(247,248,251,.95) !important;
+    font-weight: 550;
+    line-height: 1.25;
+    padding-top: .5em;
+}
+
+.cardText-secondary,
+.secondary,
+.secondaryText {
+    color: var(--cf-muted) !important;
+}
+
+.cardImage {
+    transition: none !important;
+}
+
+.card:hover .cardImage {
+    transform: none !important;
+}
