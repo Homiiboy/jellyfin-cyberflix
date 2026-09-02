@@ -26,7 +26,7 @@ body {
     background: transparent !important;
 }
 
-/* Subtle vignette/noise illusion without external assets */
+/* Subtle vignette/noise illusion without external assets. */
 body::before {
     content: "";
     position: fixed;
@@ -39,12 +39,18 @@ body::before {
     opacity: 0.68;
 }
 
+/* Only pages receive positioning from CyberFlix. Jellyfin keeps control of
+   header/drawer/dialog positioning so sticky/fixed behavior cannot regress. */
 .page,
+.mainAnimatedPage {
+    position: relative;
+    z-index: 1;
+}
+
 .skinHeader,
 .mainDrawer,
 .dialog,
 .actionSheet,
 .toast {
-    position: relative;
-    z-index: 1;
+    z-index: 2;
 }
