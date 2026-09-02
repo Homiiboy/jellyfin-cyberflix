@@ -1,13 +1,20 @@
-/* CyberFlix 0.0.1 — accessibility */
-button:focus-visible,
+/* CyberFlix 0.0.2 — accessibility */
+:focus-visible,
 .emby-button:focus-visible,
+.paper-icon-button-light:focus-visible,
 .card:focus-visible,
+.card:focus-within {
+    outline: none;
+}
+
+.emby-button:focus-visible,
+.paper-icon-button-light:focus-visible,
 .navMenuOption:focus-visible,
 .emby-input:focus-visible,
-.emby-select:focus-visible {
-    outline: 2px solid var(--cf-cyan) !important;
-    outline-offset: 3px;
-    box-shadow: 0 0 0 4px rgba(0, 234, 255, .10) !important;
+.emby-select:focus-visible,
+.card:focus-visible > .cardBox,
+.card:focus-within > .cardBox {
+    box-shadow: 0 0 0 3px rgba(15,113,115,.40), 0 0 0 6px rgba(231,236,239,.10) !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -15,8 +22,46 @@ button:focus-visible,
     *::before,
     *::after {
         scroll-behavior: auto !important;
-        transition-duration: .01ms !important;
         animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        transition-delay: 0ms !important;
+    }
+
+    .card-hoverable:hover > .cardBox,
+    .card:focus-within > .cardBox,
+    .card.show-animation:focus > .cardBox {
+        transform: none !important;
+    }
+
+    .backdropImage {
+        transform: none !important;
+    }
+}
+
+@media (prefers-contrast: more) {
+    :root {
+        --cf-text-soft: rgba(255,255,255,.88);
+        --cf-text-muted: rgba(255,255,255,.72);
+        --cf-line: rgba(255,255,255,.20);
+    }
+
+    .cardImageContainer,
+    .dialog,
+    .actionSheet,
+    .emby-input,
+    .emby-select {
+        border-color: rgba(255,255,255,.30) !important;
+    }
+}
+
+@media (forced-colors: active) {
+    .cardImageContainer,
+    .dialog,
+    .actionSheet,
+    .emby-button,
+    .emby-input,
+    .emby-select {
+        forced-color-adjust: auto;
     }
 }

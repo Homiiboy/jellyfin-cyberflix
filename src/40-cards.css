@@ -1,50 +1,131 @@
-/* CyberFlix 0.0.1 — cards. Artwork-safe: never replace card backgrounds. */
+/* CyberFlix 0.0.2 — card system */
 .card {
-    position: relative;
-    z-index: 1;
-    transform: translateZ(0);
-    transition: transform var(--cf-normal) var(--cf-ease), filter var(--cf-normal) ease;
+    overflow: visible !important;
+    contain: layout style !important;
 }
 
-.cardBox,
+.card:not(.show-animation) {
+    contain: layout style !important;
+}
+
+.cardBox {
+    margin: .52em !important;
+    border-radius: var(--cf-radius-md) !important;
+    overflow: visible !important;
+    transform-origin: center center;
+    transition:
+        transform var(--cf-med) var(--cf-ease) var(--cf-hover-delay),
+        filter var(--cf-med) ease var(--cf-hover-delay) !important;
+}
+
 .cardScalable {
     overflow: visible !important;
 }
 
+/* IMPORTANT: never assign background/background-image here. Jellyfin owns artwork. */
 .cardImageContainer {
-    overflow: hidden !important;
     border-radius: var(--cf-radius-md) !important;
-    outline: 1px solid rgba(255, 255, 255, .07);
+    overflow: hidden !important;
+    outline: 1px solid rgba(231,236,239,.07);
     outline-offset: -1px;
-    box-shadow: var(--cf-shadow-card);
-    transition: outline-color var(--cf-normal) ease, box-shadow var(--cf-normal) ease, filter var(--cf-normal) ease;
+    box-shadow: var(--cf-shadow-card) !important;
+    transition:
+        outline-color var(--cf-med) ease,
+        box-shadow var(--cf-med) ease,
+        filter var(--cf-med) ease !important;
 }
 
 .cardContent,
 .blurhash-canvas,
-.cardOverlayContainer {
+.cardPadder,
+.visualCardBox {
     border-radius: var(--cf-radius-md) !important;
 }
 
-.card-hoverable:hover,
-.card:hover {
-    z-index: 80;
-    transform: translateY(-7px) scale(1.035);
+.visualCardBox {
+    background: rgba(15,18,21,.76) !important;
+    border: 1px solid rgba(231,236,239,.055);
+    box-shadow: var(--cf-shadow-card) !important;
+    overflow: hidden;
+}
+
+.visualCardBox .cardContent,
+.visualCardBox .blurhash-canvas {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+.card-hoverable:hover > .cardBox,
+.card:focus-within > .cardBox,
+.card.show-animation:focus > .cardBox {
+    transform: translateY(-7px) scale(1.04) !important;
+    z-index: 30;
 }
 
 .card-hoverable:hover .cardImageContainer,
-.card:hover .cardImageContainer {
-    outline-color: rgba(255, 255, 255, .23);
-    filter: brightness(1.035) saturate(1.04);
-    box-shadow: var(--cf-shadow-float), -3px 0 16px rgba(0, 234, 255, .05), 3px 0 16px rgba(255, 43, 214, .04);
+.card:focus-within .cardImageContainer {
+    outline-color: rgba(231,236,239,.24);
+    filter: brightness(1.045) saturate(1.045);
+    box-shadow:
+        0 30px 70px rgba(0,0,0,.72),
+        0 0 0 1px rgba(15,113,115,.10) !important;
+}
+
+.cardImage {
+    transform: none !important;
+    transition: none !important;
+}
+
+.card:hover .cardImage,
+.card:focus-within .cardImage {
+    transform: none !important;
+}
+
+.cardFooter {
+    padding: .62rem .38rem .54rem !important;
+}
+
+.visualCardBox .cardFooter {
+    padding: .66rem .75rem .72rem !important;
+    background: linear-gradient(180deg, rgba(15,18,21,.94), rgba(9,11,13,.98)) !important;
 }
 
 .cardText {
     color: var(--cf-text) !important;
-    font-weight: 600;
+    font-size: .96em;
+    font-weight: 620;
+    letter-spacing: -.022em;
+    line-height: 1.3;
 }
 
-.cardImage,
-.card:hover .cardImage {
-    transform: none !important;
+.cardText-secondary {
+    color: var(--cf-text-muted) !important;
+    font-size: .82em !important;
+    font-weight: 520;
+}
+
+.mediaSourceIndicator,
+.countIndicator,
+.playedIndicator {
+    background: rgba(15,113,115,.92) !important;
+    color: #fff !important;
+    border: 1px solid rgba(255,255,255,.18);
+    box-shadow: 0 6px 16px rgba(0,0,0,.38) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.playedIndicator {
+    background: rgba(173,52,62,.92) !important;
+}
+
+.multiSelectCheckboxOutline,
+.checkboxOutline {
+    border-color: rgba(231,236,239,.48) !important;
+}
+
+.itemSelectionPanel {
+    border-radius: var(--cf-radius-md) !important;
+    border-color: var(--cf-coral) !important;
+    box-shadow: 0 0 0 2px rgba(240,93,94,.18) !important;
 }

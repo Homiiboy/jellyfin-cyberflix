@@ -1,56 +1,125 @@
-/* CyberFlix 0.0.1 — shared UI */
-.mainDrawer,
-.dialog,
-.actionSheet {
-    background: rgba(7, 9, 14, .96) !important;
-    border: 1px solid var(--cf-border);
-    backdrop-filter: blur(28px) saturate(1.1);
-    -webkit-backdrop-filter: blur(28px) saturate(1.1);
-    box-shadow: 0 30px 80px rgba(0, 0, 0, .66);
-}
-
-.dialog,
-.actionSheet {
-    border-radius: var(--cf-radius-lg) !important;
+/* CyberFlix 0.0.2 — shared UI surfaces */
+.mainDrawer {
+    background:
+        linear-gradient(180deg, rgba(10,12,14,.99), rgba(5,6,7,.99)) !important;
+    border-right: 1px solid rgba(231,236,239,.08) !important;
+    box-shadow: 22px 0 70px rgba(0,0,0,.48) !important;
+    backdrop-filter: blur(26px);
+    -webkit-backdrop-filter: blur(26px);
 }
 
 .navMenuOption {
+    margin: .18rem .55rem !important;
     border-radius: var(--cf-radius-sm) !important;
-    transition: background-color var(--cf-fast) ease, color var(--cf-fast) ease, transform var(--cf-fast) ease;
+    color: rgba(231,236,239,.68) !important;
+    font-weight: 590;
 }
 
-.navMenuOption:hover,
-.navMenuOption-selected {
-    background: rgba(0, 234, 255, .07) !important;
+.navMenuOption:hover {
     color: #fff !important;
+    background: rgba(15,113,115,.13) !important;
+}
+
+.navMenuOption-selected,
+.navMenuOption.emby-button-active {
+    color: #fff !important;
+    background: linear-gradient(90deg, rgba(15,113,115,.26), rgba(15,113,115,.08)) !important;
+    box-shadow: inset 3px 0 0 var(--cf-teal);
+}
+
+.dialog,
+.actionSheet {
+    background:
+        linear-gradient(145deg, rgba(20,24,28,.985), rgba(8,10,12,.99)) !important;
+    color: var(--cf-text) !important;
+    border: 1px solid rgba(231,236,239,.10) !important;
+    border-radius: var(--cf-radius-lg) !important;
+    box-shadow: var(--cf-shadow-panel) !important;
+    backdrop-filter: blur(28px) saturate(1.08);
+    -webkit-backdrop-filter: blur(28px) saturate(1.08);
+}
+
+.actionSheetMenuItem:hover,
+.listItem-border:hover {
+    background: rgba(231,236,239,.06) !important;
 }
 
 .emby-input,
 .emby-textarea,
 .emby-select {
-    border: 1px solid var(--cf-border) !important;
+    min-height: 2.8rem;
+    border: 1px solid rgba(231,236,239,.14) !important;
     border-radius: var(--cf-radius-sm) !important;
-    background: rgba(5, 7, 11, .86) !important;
+    background: rgba(5,7,8,.78) !important;
     color: var(--cf-text) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.02);
+}
+
+.emby-input:hover,
+.emby-textarea:hover,
+.emby-select:hover {
+    border-color: rgba(231,236,239,.28) !important;
 }
 
 .emby-input:focus,
 .emby-textarea:focus,
 .emby-select:focus {
-    border-color: rgba(0, 234, 255, .55) !important;
-    box-shadow: 0 0 0 3px rgba(0, 234, 255, .08);
+    border-color: var(--cf-teal) !important;
+    box-shadow: 0 0 0 3px rgba(15,113,115,.16) !important;
+}
+
+.checkboxOutline {
+    border-color: rgba(231,236,239,.36) !important;
+    border-radius: 5px !important;
+}
+
+.emby-checkbox:checked + span + .checkboxOutline,
+.checkboxIcon-checked {
+    border-color: var(--cf-teal) !important;
+    background: var(--cf-teal) !important;
+    color: #fff !important;
+}
+
+.mdl-switch__track {
+    background: rgba(231,236,239,.18) !important;
+}
+
+.mdl-switch__thumb {
+    background: var(--cf-platinum) !important;
+}
+
+.mdl-switch__input:checked + .mdl-switch__label + .mdl-switch__track,
+.mdl-switch__input:checked ~ .mdl-switch__track {
+    background: rgba(15,113,115,.42) !important;
+}
+
+.mdl-switch__input:checked + .mdl-switch__label + .mdl-switch__track .mdl-switch__thumb,
+.mdl-switch__input:checked ~ .mdl-switch__thumb {
+    background: var(--cf-teal) !important;
+}
+
+.paperList,
+.cardBox.visualCardBox {
+    background-color: rgba(15,18,21,.68) !important;
 }
 
 ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 9px;
+    height: 9px;
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--cf-bg-0);
+    background: rgba(0,0,0,.34);
 }
 
 ::-webkit-scrollbar-thumb {
-    border-radius: 999px;
-    background: linear-gradient(180deg, var(--cf-cyan), var(--cf-violet), var(--cf-magenta));
+    border: 2px solid transparent;
+    border-radius: var(--cf-pill);
+    background: rgba(71,71,71,.88);
+    background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--cf-teal);
+    background-clip: padding-box;
 }

@@ -1,19 +1,49 @@
-/* CyberFlix 0.0.1 — feedback, loading and status */
-.toast {
-    border: 1px solid var(--cf-border) !important;
+/* CyberFlix 0.0.2 — feedback, loading & notifications */
+.toast,
+.snackbar {
+    color: var(--cf-text) !important;
+    border: 1px solid rgba(231,236,239,.10) !important;
     border-radius: var(--cf-radius-md) !important;
-    background: rgba(8, 11, 17, .96) !important;
-    color: #fff !important;
-    box-shadow: 0 18px 44px rgba(0, 0, 0, .56);
+    background: rgba(15,18,21,.94) !important;
+    box-shadow: 0 18px 52px rgba(0,0,0,.52) !important;
+    backdrop-filter: blur(22px) saturate(1.08);
+    -webkit-backdrop-filter: blur(22px) saturate(1.08);
 }
 
+.toast::before,
+.snackbar::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 18%;
+    bottom: 18%;
+    width: 3px;
+    border-radius: 0 var(--cf-pill) var(--cf-pill) 0;
+    background: var(--cf-teal);
+}
+
+.progressring-spiner,
 .mdl-spinner__layer,
-.progressring-spiner {
-    color: var(--cf-cyan) !important;
+.loadingSpinner {
+    color: var(--cf-teal) !important;
+    border-color: var(--cf-teal) !important;
 }
 
-.playedIndicator,
-.countIndicator {
-    background: linear-gradient(135deg, var(--cf-violet), var(--cf-magenta)) !important;
-    color: #fff !important;
+.linearProgress .bar,
+.mdl-progress > .progressbar {
+    background: linear-gradient(90deg, var(--cf-teal), var(--cf-coral)) !important;
+}
+
+.linearProgress,
+.mdl-progress {
+    background: rgba(231,236,239,.12) !important;
+}
+
+.errorMessage,
+.validationError {
+    color: var(--cf-coral) !important;
+}
+
+.successMessage {
+    color: #76c7b7 !important;
 }

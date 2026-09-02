@@ -1,19 +1,64 @@
-/* CyberFlix 0.0.1 — settings and dashboard */
+/* CyberFlix 0.0.2 — settings & dashboard */
+.dashboardPage,
+.settingsPage {
+    color: var(--cf-text) !important;
+}
+
 .dashboardSection,
-.verticalSection-extrabottompadding {
-    color: var(--cf-text);
+.dashboardGeneralForm,
+.settingsContainer,
+.verticalSection-extrabottompadding .paperList {
+    border: 1px solid rgba(231,236,239,.07);
+    border-radius: var(--cf-radius-lg) !important;
+    background: rgba(15,18,21,.54) !important;
+    box-shadow: 0 16px 44px rgba(0,0,0,.22);
 }
 
-.paperList,
-.cardBox-bottompadded {
-    border-radius: var(--cf-radius-md);
+.dashboardSection,
+.dashboardGeneralForm,
+.settingsContainer {
+    padding: clamp(1rem, 2vw, 1.5rem) !important;
 }
 
-.checkboxOutline,
-.emby-checkbox:checked + span + .checkboxOutline {
-    border-color: rgba(0, 234, 255, .42) !important;
+.dashboardSectionTitle,
+.settingsPage h2,
+.settingsPage h3 {
+    color: var(--cf-text) !important;
+    font-weight: 760 !important;
+    letter-spacing: -.035em;
 }
 
-.emby-checkbox:checked + span + .checkboxOutline {
-    background-color: var(--cf-cyan) !important;
+.dashboardPage .listItem,
+.settingsPage .listItem {
+    border-radius: var(--cf-radius-sm) !important;
+}
+
+.dashboardPage .listItem:hover,
+.settingsPage .listItem:hover {
+    background: rgba(231,236,239,.05) !important;
+}
+
+.dashboardPage .fab,
+.settingsPage .fab {
+    background: var(--cf-teal) !important;
+    color: #fff !important;
+    box-shadow: 0 10px 28px rgba(15,113,115,.26) !important;
+}
+
+.dashboardPage .fab:hover,
+.settingsPage .fab:hover {
+    background: var(--cf-accent-bright) !important;
+}
+
+/* Destructive actions remain visually distinct without dominating the UI. */
+.button-delete,
+.button-cancel.button-delete,
+.btnDelete {
+    color: var(--cf-coral) !important;
+}
+
+.button-delete:hover,
+.btnDelete:hover {
+    background: rgba(173,52,62,.14) !important;
+    color: #fff !important;
 }

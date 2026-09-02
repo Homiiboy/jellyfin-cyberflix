@@ -1,22 +1,83 @@
-/* CyberFlix 0.0.1 — library */
-.itemsContainer {
-    position: relative;
+/* CyberFlix 0.0.2 — library & browse */
+.libraryPage,
+.itemsPage {
+    padding-bottom: 7rem !important;
 }
 
-.libraryPage .sectionTitle,
-.itemsViewSettingsContainer {
-    color: var(--cf-text) !important;
+.libraryViewNav,
+.itemsViewSettingsContainer,
+.viewSettings {
+    background: rgba(8,10,12,.58) !important;
+    border: 1px solid rgba(231,236,239,.07);
+    border-radius: var(--cf-radius-lg) !important;
+    backdrop-filter: blur(20px) saturate(1.08);
+    -webkit-backdrop-filter: blur(20px) saturate(1.08);
+    box-shadow: 0 16px 40px rgba(0,0,0,.24);
+}
+
+.itemsViewSettingsContainer,
+.viewSettings {
+    padding: .4rem !important;
+}
+
+.libraryViewNav .emby-tab-button,
+.viewSettings .emby-button,
+.itemsViewSettingsContainer .emby-button {
+    border-radius: var(--cf-radius-sm) !important;
+    color: var(--cf-text-soft) !important;
+}
+
+.libraryViewNav .emby-tab-button:hover,
+.viewSettings .emby-button:hover,
+.itemsViewSettingsContainer .emby-button:hover {
+    color: #fff !important;
+    background: rgba(231,236,239,.07) !important;
+}
+
+.libraryViewNav .emby-tab-button-active {
+    color: #fff !important;
+}
+
+.alphaPicker {
+    color: rgba(231,236,239,.45) !important;
+}
+
+.alphaPicker .alphaPickerButtonSelected,
+.alphaPicker button:hover {
+    color: var(--cf-coral) !important;
 }
 
 .listItem {
     border-radius: var(--cf-radius-md) !important;
-    transition: background-color var(--cf-fast) ease, transform var(--cf-fast) ease;
+    transition: background-color var(--cf-fast) ease, transform var(--cf-fast) var(--cf-ease);
 }
 
 .listItem:hover {
-    background: rgba(255, 255, 255, .045) !important;
+    background: rgba(231,236,239,.055) !important;
 }
 
 .listItemImage {
     border-radius: var(--cf-radius-sm) !important;
+    box-shadow: 0 8px 22px rgba(0,0,0,.32);
+}
+
+.listItemBodyText,
+.listItemBodyText-secondary {
+    color: var(--cf-text-muted) !important;
+}
+
+.listItemBodyText:first-child,
+.listItem .itemName {
+    color: var(--cf-text) !important;
+}
+
+.pagingContainer,
+.listPaging {
+    color: var(--cf-text-soft) !important;
+}
+
+.pagingContainer .emby-button:hover,
+.listPaging .emby-button:hover {
+    background: rgba(15,113,115,.18) !important;
+    color: #fff !important;
 }

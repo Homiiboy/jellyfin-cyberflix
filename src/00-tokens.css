@@ -1,25 +1,57 @@
-/* CyberFlix 0.0.1 — design tokens */
+/* CyberFlix 0.0.2 — design tokens */
 :root {
-    --cf-bg-0: #020305;
-    --cf-bg-1: #06080d;
-    --cf-bg-2: #0b0e15;
-    --cf-surface: rgba(12, 15, 22, .92);
-    --cf-surface-soft: rgba(13, 17, 25, .72);
-    --cf-text: #f6f7fb;
-    --cf-text-soft: rgba(232, 236, 245, .72);
-    --cf-text-muted: rgba(218, 223, 234, .52);
-    --cf-border: rgba(255, 255, 255, .09);
-    --cf-border-strong: rgba(255, 255, 255, .18);
-    --cf-cyan: #00eaff;
-    --cf-violet: #8b5cf6;
-    --cf-magenta: #ff2bd6;
-    --cf-danger: #ff5d73;
-    --cf-radius-sm: 8px;
-    --cf-radius-md: 12px;
+    /* User palette */
+    --cf-cherry: #AD343E;
+    --cf-iron: #474747;
+    --cf-gold: #F2AF29;
+    --cf-black: #000000;
+    --cf-eggshell: #E0E0CE;
+    --cf-coral: #F05D5E;
+    --cf-teal: #0F7173;
+    --cf-platinum: #E7ECEF;
+    --cf-shadow: #272932;
+    --cf-bronze: #D8A47F;
+
+    /* Semantic surfaces */
+    --cf-bg-0: #050607;
+    --cf-bg-1: #090b0d;
+    --cf-bg-2: #0f1215;
+    --cf-bg-3: #15191d;
+    --cf-surface: rgba(15, 18, 21, 0.92);
+    --cf-surface-strong: rgba(10, 12, 14, 0.97);
+    --cf-surface-soft: rgba(39, 41, 50, 0.60);
+    --cf-glass: rgba(9, 11, 13, 0.72);
+
+    /* Semantic colors */
+    --cf-text: #F3F5F6;
+    --cf-text-soft: rgba(231, 236, 239, 0.74);
+    --cf-text-muted: rgba(231, 236, 239, 0.50);
+    --cf-line: rgba(231, 236, 239, 0.10);
+    --cf-line-strong: rgba(231, 236, 239, 0.22);
+    --cf-accent: var(--cf-teal);
+    --cf-accent-bright: #15989b;
+    --cf-feature: var(--cf-coral);
+    --cf-feature-deep: var(--cf-cherry);
+    --cf-premium: var(--cf-gold);
+    --cf-warm: var(--cf-bronze);
+
+    /* Geometry */
+    --cf-radius-xs: 6px;
+    --cf-radius-sm: 9px;
+    --cf-radius-md: 13px;
     --cf-radius-lg: 18px;
-    --cf-shadow-card: 0 12px 32px rgba(0, 0, 0, .44);
-    --cf-shadow-float: 0 30px 70px rgba(0, 0, 0, .78);
-    --cf-ease: cubic-bezier(.2, .8, .2, 1);
-    --cf-fast: 160ms;
-    --cf-normal: 240ms;
+    --cf-radius-xl: 26px;
+    --cf-pill: 999px;
+
+    /* Motion */
+    --cf-fast: 150ms;
+    --cf-med: 240ms;
+    --cf-slow: 420ms;
+    --cf-ease: cubic-bezier(.2, .75, .2, 1);
+    --cf-hover-delay: 95ms;
+
+    /* Shadows */
+    --cf-shadow-card: 0 12px 32px rgba(0, 0, 0, 0.42);
+    --cf-shadow-card-hover: 0 28px 70px rgba(0, 0, 0, 0.72);
+    --cf-shadow-panel: 0 24px 80px rgba(0, 0, 0, 0.58);
 }

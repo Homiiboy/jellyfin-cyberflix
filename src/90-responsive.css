@@ -1,31 +1,90 @@
-/* CyberFlix 0.0.1 — responsive */
-@media (max-width: 900px) {
-    .card-hoverable:hover,
-    .card:hover {
-        transform: translateY(-4px) scale(1.02);
+/* CyberFlix 0.0.2 — responsive layout */
+@media (max-width: 64em) {
+    .skinHeader {
+        min-height: 4.25rem;
     }
 
-    .detailPagePrimaryContainer .itemName {
-        font-size: clamp(2rem, 8vw, 3.3rem) !important;
+    .headerTabs .emby-tab-button {
+        padding-inline: .7rem !important;
+    }
+
+    .detailPagePrimaryContainer {
+        min-height: 54vh;
+    }
+
+    .detailPagePrimaryContainer .itemName,
+    .detailPagePrimaryContainer h1 {
+        font-size: clamp(2.35rem, 7vw, 4.6rem) !important;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 50em) {
     body::before {
-        background-size: 48px 48px;
+        opacity: .45;
     }
 
-    .card-hoverable:hover,
-    .card:hover {
-        transform: none;
+    .homePage .verticalSection {
+        margin-bottom: 1.8rem !important;
+    }
+
+    .cardBox {
+        margin: .42em !important;
+    }
+
+    .card-hoverable:hover > .cardBox,
+    .card:focus-within > .cardBox,
+    .card.show-animation:focus > .cardBox {
+        transform: translateY(-3px) scale(1.022) !important;
     }
 
     .backdropImage {
         transform: scale(1.02);
-        filter: brightness(.48) saturate(1.04);
+        filter: brightness(.48) contrast(1.05) saturate(1.04);
     }
 
-    .homePage .verticalSection {
-        margin-bottom: 1.45rem;
+    .backdropContainer::after {
+        background:
+            linear-gradient(180deg, rgba(3,4,5,.12) 0%, rgba(3,4,5,.36) 40%, rgba(3,4,5,.92) 78%, var(--cf-bg-0) 100%),
+            linear-gradient(90deg, rgba(3,4,5,.72), rgba(3,4,5,.18)) !important;
+    }
+
+    .detailPagePrimaryContainer {
+        min-height: 48vh;
+        padding-top: 5rem !important;
+    }
+
+    .detailPagePrimaryContainer .itemName,
+    .detailPagePrimaryContainer h1 {
+        max-width: 100%;
+        font-size: clamp(2rem, 10vw, 3.25rem) !important;
+    }
+
+    .manualLoginForm,
+    .visualLoginForm,
+    .loginPage .readOnlyContent {
+        border-radius: var(--cf-radius-lg) !important;
+    }
+}
+
+@media (max-width: 35em) {
+    .headerTabs .emby-tab-button {
+        font-size: .88rem;
+        padding-inline: .42rem !important;
+    }
+
+    .homePage .sectionTitle {
+        font-size: 1.25rem !important;
+    }
+
+    .cardOverlayContainer > .cardOverlayFab-primary {
+        width: 3.15em !important;
+        height: 3.15em !important;
+        min-width: 3.15em !important;
+        min-height: 3.15em !important;
+        margin: -1.575em 0 0 -1.575em !important;
+    }
+
+    .overview {
+        font-size: .98rem !important;
     }
 }

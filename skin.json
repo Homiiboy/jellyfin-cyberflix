@@ -1,9 +1,20 @@
 {
   "name": "CyberFlix",
-  "version": "0.0.1",
-  "status": "development",
-  "description": "A cinematic Jellyfin Web skin with restrained cyberpunk accents.",
-  "repository": "Homiiboy/jellyfin-cyberflix",
-  "entry": "dist/theme.css",
-  "license": "MIT"
+  "version": "0.0.2",
+  "target": "Jellyfin Web",
+  "channel": "development",
+  "design": "cinematic streaming interface",
+  "palette": {
+    "intenseCherry": "#AD343E",
+    "ironGrey": "#474747",
+    "sunflowerGold": "#F2AF29",
+    "black": "#000000",
+    "eggshell": "#E0E0CE",
+    "vibrantCoral": "#F05D5E",
+    "stormyTeal": "#0F7173",
+    "platinum": "#E7ECEF",
+    "shadowGrey": "#272932",
+    "lightBronze": "#D8A47F"
+  },
+  "entrypoint": "dist/theme.css"
 }

@@ -1,31 +1,73 @@
-/* CyberFlix 0.0.1 — header */
+/* CyberFlix 0.0.2 — streaming navigation */
 .skinHeader {
-    background: linear-gradient(180deg, rgba(2, 3, 5, .97), rgba(2, 3, 5, .76)) !important;
-    backdrop-filter: blur(24px) saturate(1.18);
-    -webkit-backdrop-filter: blur(24px) saturate(1.18);
-    border-bottom: 1px solid rgba(0, 234, 255, .09);
-    box-shadow: 0 14px 36px rgba(0, 0, 0, .34) !important;
+    min-height: 4.7rem;
+    background: linear-gradient(180deg, rgba(0,0,0,.94) 0%, rgba(5,7,8,.76) 64%, rgba(5,7,8,0) 100%) !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.skinHeader.skinHeader-withBackground,
+.skinHeader.semiTransparent {
+    background: rgba(5, 7, 8, 0.78) !important;
+    border-bottom: 1px solid rgba(231,236,239,.07) !important;
+    backdrop-filter: blur(24px) saturate(1.14);
+    -webkit-backdrop-filter: blur(24px) saturate(1.14);
+    box-shadow: 0 12px 38px rgba(0,0,0,.26) !important;
+}
+
+.headerTop {
+    padding-left: clamp(.45rem, 1.8vw, 2rem);
+    padding-right: clamp(.45rem, 1.8vw, 2rem);
 }
 
 .headerButton,
-.headerTabs .emby-tab-button {
-    color: var(--cf-text-soft) !important;
-    transition: color var(--cf-fast) ease, transform var(--cf-fast) ease;
+.paper-icon-button-light.headerButton {
+    color: rgba(231,236,239,.74) !important;
+    border-radius: var(--cf-pill) !important;
 }
 
 .headerButton:hover,
+.paper-icon-button-light.headerButton:hover {
+    color: #fff !important;
+    background: rgba(231,236,239,.08) !important;
+    transform: scale(1.035);
+}
+
+.headerTabs {
+    gap: .25rem;
+}
+
+.headerTabs .emby-tab-button {
+    position: relative;
+    color: rgba(231,236,239,.58) !important;
+    font-size: .96rem;
+    font-weight: 650;
+    letter-spacing: -.015em;
+    padding-inline: 1.05rem !important;
+}
+
 .headerTabs .emby-tab-button:hover,
 .headerTabs .emby-tab-button-active {
     color: #fff !important;
 }
 
-.headerButton:hover {
-    transform: translateY(-1px);
+.headerTabs .emby-tab-button-active::after,
+.emby-tab-button-active::after {
+    content: "";
+    position: absolute;
+    left: 22%;
+    right: 22%;
+    bottom: .28rem;
+    height: 3px !important;
+    border-radius: var(--cf-pill);
+    background: linear-gradient(90deg, var(--cf-coral), var(--cf-cherry)) !important;
+    box-shadow: 0 0 15px rgba(240,93,94,.30);
 }
 
-.emby-tab-button-active::after {
-    height: 3px !important;
-    border-radius: 999px;
-    background: linear-gradient(90deg, var(--cf-cyan), var(--cf-violet), var(--cf-magenta)) !important;
-    box-shadow: 0 0 14px rgba(0, 234, 255, .32);
+/* Keep chrome visually subordinate to content */
+.headerClock,
+.headerSyncButton {
+    opacity: .72;
 }

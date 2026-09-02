@@ -1,17 +1,19 @@
 # CyberFlix Roadmap
 
-## 0.0.x — Foundation
-- Establish project structure, tokens and safe Jellyfin selectors.
-- Build a consistent visual baseline across the whole web client.
-- Stabilize poster rendering and hover behavior.
+## 0.0.x — Visual foundation
+- [x] Project structure, versioning and prototype archive (`0.0.1`).
+- [x] New cinema-first color system and whole-client visual pass (`0.0.2`).
+- [ ] Selector hardening against the exact Jellyfin Web version in use.
+- [ ] Screenshot-driven polish of spacing, card sizes and overlays.
 
 ## 0.1.x — Home experience
 - Refine My Media and Continue Watching.
-- Improve row density, typography and cinematic hover interactions.
+- Tune row density, typography and cinematic hover interactions.
+- Explore an optional true dynamic hero for custom Jellyfin Web builds.
 
 ## 0.2.x — Details
 - Film, series, season and episode detail layouts.
-- Stronger backdrop hierarchy and action controls.
+- Stronger backdrop hierarchy and richer action controls.
 
 ## 0.3.x — Library & discovery
 - Library views, search, filters, sorting and collections.

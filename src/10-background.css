@@ -1,26 +1,50 @@
-/* CyberFlix 0.0.1 — background */
+/* CyberFlix 0.0.2 — cinematic background */
+html,
+body {
+    min-height: 100%;
+    background-color: var(--cf-bg-0) !important;
+}
+
 .backgroundContainer,
 .backgroundContainer:not(.withBackdrop),
 .backgroundContainer.backgroundContainer-transparent:not(.withBackdrop) {
     background-color: var(--cf-bg-0) !important;
     background-image:
-        radial-gradient(circle at 8% -10%, rgba(0, 234, 255, .13), transparent 34%),
-        radial-gradient(circle at 96% 4%, rgba(255, 43, 214, .09), transparent 31%),
-        radial-gradient(circle at 54% 110%, rgba(139, 92, 246, .10), transparent 38%),
-        linear-gradient(180deg, #07090e 0%, var(--cf-bg-0) 56%, #010204 100%) !important;
+        radial-gradient(70rem 42rem at 88% -8%, rgba(15, 113, 115, 0.18), transparent 64%),
+        radial-gradient(54rem 34rem at 8% 18%, rgba(173, 52, 62, 0.10), transparent 68%),
+        radial-gradient(42rem 30rem at 52% 108%, rgba(216, 164, 127, 0.055), transparent 72%),
+        linear-gradient(180deg, #0a0d0f 0%, #060708 34%, #030404 100%) !important;
 }
 
+.backgroundContainer.withBackdrop {
+    background-color: #030404 !important;
+}
+
+.page,
+.mainAnimatedPage,
+.homePage {
+    background: transparent !important;
+}
+
+/* Subtle vignette/noise illusion without external assets */
 body::before {
     content: "";
     position: fixed;
     inset: 0;
     z-index: 0;
     pointer-events: none;
-    opacity: .055;
-    background-image:
-        linear-gradient(rgba(0, 234, 255, .12) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 234, 255, .08) 1px, transparent 1px);
-    background-size: 76px 76px;
-    mask-image: linear-gradient(to bottom, #000, transparent 66%);
-    -webkit-mask-image: linear-gradient(to bottom, #000, transparent 66%);
+    background:
+        radial-gradient(circle at center, transparent 42%, rgba(0, 0, 0, 0.28) 100%),
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.009) 0 1px, transparent 1px 4px);
+    opacity: 0.68;
+}
+
+.page,
+.skinHeader,
+.mainDrawer,
+.dialog,
+.actionSheet,
+.toast {
+    position: relative;
+    z-index: 1;
 }
