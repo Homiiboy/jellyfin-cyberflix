@@ -1,0 +1,22 @@
+/* CyberFlix 0.0.1 — accessibility */
+button:focus-visible,
+.emby-button:focus-visible,
+.card:focus-visible,
+.navMenuOption:focus-visible,
+.emby-input:focus-visible,
+.emby-select:focus-visible {
+    outline: 2px solid var(--cf-cyan) !important;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 4px rgba(0, 234, 255, .10) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}

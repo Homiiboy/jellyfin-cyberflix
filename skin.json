@@ -1,0 +1,9 @@
+{
+  "name": "CyberFlix",
+  "version": "0.0.1",
+  "status": "development",
+  "description": "A cinematic Jellyfin Web skin with restrained cyberpunk accents.",
+  "repository": "Homiiboy/jellyfin-cyberflix",
+  "entry": "dist/theme.css",
+  "license": "MIT"
+}

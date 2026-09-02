@@ -1,67 +1,42 @@
-# CyberFlix for Jellyfin
+# CyberFlix
 
-Netflix-inspired Jellyfin Web theme with cyberpunk cyan, purple and magenta accents.
+CyberFlix is a full Jellyfin Web skin focused on a cinematic streaming-service UX with subtle cyan, violet and magenta cyberpunk accents.
 
-## Install
+**Current development version: `0.0.1`**
 
-After publishing this repository to GitHub, open:
+## Stable installation
 
-**Jellyfin Dashboard → General → Custom CSS**
-
-and paste only:
+The current stable prototype remains on `main`. Your existing Jellyfin import continues to work unchanged:
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/Homiiboy/jellyfin-cyberflix@main/dist/theme.css");
+@import url("https://cdn.jsdelivr.net/gh/Homiiboy/jellyfin-cyberflix/dist/theme.css");
 ```
 
-Then save and hard-refresh Jellyfin with `Ctrl + F5`.
+## Test the 0.0.1 development skin
 
-## Stable release URL
-
-For a tagged release, use:
+Use this only when you intentionally want to test the `develop` branch:
 
 ```css
-@import url("https://cdn.jsdelivr.net/gh/Homiiboy/jellyfin-cyberflix@1.0.0/dist/theme.css");
+@import url("https://cdn.jsdelivr.net/gh/Homiiboy/jellyfin-cyberflix@develop/dist/theme.css?v=0.0.1");
 ```
 
 ## Development
 
-Edit the files in `src/`, then rebuild:
+Source modules live in `src/`. `dist/theme.css` is the file consumed by Jellyfin.
 
 ```bash
+python scripts/validate.py
 python scripts/build.py
 ```
 
-Jellyfin loads:
+## Versioning
 
-```text
-dist/theme.css
-```
+CyberFlix uses Semantic Versioning beginning at `0.0.1`.
 
-## Project structure
+- `0.0.x` — early foundation iterations
+- `0.x.0` — larger pre-1.0 milestones
+- `1.0.0` — first complete stable skin
 
-```text
-jellyfin-cyberflix/
-├─ dist/
-│  └─ theme.css
-├─ src/
-│  ├─ 00-tokens.css
-│  ├─ 10-background.css
-│  ├─ 20-header.css
-│  ├─ 30-home.css
-│  ├─ 40-cards.css
-│  ├─ 50-details.css
-│  ├─ 60-ui.css
-│  └─ 90-responsive.css
-├─ scripts/
-│  └─ build.py
-├─ theme.css
-├─ LICENSE
-└─ README.md
-```
+## Prototype archive
 
-## Notes
-
-- Designed for Jellyfin Web.
-- Native apps may ignore some custom CSS.
-- Card artwork stays under Jellyfin's control; the theme does not replace card `background-image` values.
+The original theme prototype is preserved under `prototype/v1.1.0/` and is never loaded by the new skin.

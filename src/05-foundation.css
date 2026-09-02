@@ -1,0 +1,31 @@
+/* CyberFlix 0.0.1 — foundation */
+html,
+body {
+    background: var(--cf-bg-0) !important;
+    color: var(--cf-text) !important;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.page {
+    background: transparent !important;
+}
+
+h1, h2, h3, h4,
+.sectionTitle,
+.cardText {
+    letter-spacing: -.015em;
+}
+
+.secondary,
+.secondaryText,
+.cardText-secondary {
+    color: var(--cf-text-muted) !important;
+}
+
+::selection {
+    background: rgba(139, 92, 246, .52);
+    color: #fff;
+}

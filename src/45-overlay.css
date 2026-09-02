@@ -1,0 +1,48 @@
+/* CyberFlix 0.0.1 — cinematic card overlay */
+.cardOverlayContainer {
+    background: linear-gradient(
+        to top,
+        rgba(2, 3, 5, .99) 0%,
+        rgba(2, 3, 5, .94) 20%,
+        rgba(2, 3, 5, .72) 42%,
+        rgba(2, 3, 5, .28) 68%,
+        transparent 88%
+    ) !important;
+}
+
+.cardOverlayContainer > .cardOverlayFab-primary {
+    width: 3.45em !important;
+    height: 3.45em !important;
+    min-width: 3.45em !important;
+    min-height: 3.45em !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 50% !important;
+    background: #fff !important;
+    color: #050609 !important;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .62);
+    transition: transform var(--cf-fast) var(--cf-ease), box-shadow var(--cf-fast) ease !important;
+}
+
+.cardOverlayContainer > .cardOverlayFab-primary:hover,
+.cardOverlayContainer > .cardOverlayFab-primary:focus-visible {
+    transform: scale(1.09) !important;
+    box-shadow: 0 16px 34px rgba(0, 0, 0, .7), 0 0 0 3px rgba(0, 234, 255, .12);
+}
+
+.cardOverlayButtonIcon {
+    border: 1.5px solid rgba(255, 255, 255, .68);
+    border-radius: 50% !important;
+    background: rgba(14, 17, 23, .92) !important;
+    color: #fff !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: transform var(--cf-fast) ease, border-color var(--cf-fast) ease, background-color var(--cf-fast) ease;
+}
+
+.cardOverlayButton:hover .cardOverlayButtonIcon,
+.cardOverlayButton:focus-visible .cardOverlayButtonIcon {
+    transform: scale(1.07);
+    border-color: #fff;
+    background: rgba(32, 35, 43, .98) !important;
+}

@@ -1,0 +1,19 @@
+/* CyberFlix 0.0.1 — settings and dashboard */
+.dashboardSection,
+.verticalSection-extrabottompadding {
+    color: var(--cf-text);
+}
+
+.paperList,
+.cardBox-bottompadded {
+    border-radius: var(--cf-radius-md);
+}
+
+.checkboxOutline,
+.emby-checkbox:checked + span + .checkboxOutline {
+    border-color: rgba(0, 234, 255, .42) !important;
+}
+
+.emby-checkbox:checked + span + .checkboxOutline {
+    background-color: var(--cf-cyan) !important;
+}

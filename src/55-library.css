@@ -1,0 +1,22 @@
+/* CyberFlix 0.0.1 — library */
+.itemsContainer {
+    position: relative;
+}
+
+.libraryPage .sectionTitle,
+.itemsViewSettingsContainer {
+    color: var(--cf-text) !important;
+}
+
+.listItem {
+    border-radius: var(--cf-radius-md) !important;
+    transition: background-color var(--cf-fast) ease, transform var(--cf-fast) ease;
+}
+
+.listItem:hover {
+    background: rgba(255, 255, 255, .045) !important;
+}
+
+.listItemImage {
+    border-radius: var(--cf-radius-sm) !important;
+}

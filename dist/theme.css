@@ -1,14 +1,21 @@
 /*!
- * CyberFlix for Jellyfin
- * Version 1.1.0
- * Modular runtime loader
+ * CyberFlix 0.0.1 for Jellyfin Web
+ * Runtime module loader
  */
-
-@import url("../src/00-tokens.css?v=1.1.0");
-@import url("../src/10-background.css?v=1.1.0");
-@import url("../src/20-header.css?v=1.1.0");
-@import url("../src/30-home.css?v=1.1.0");
-@import url("../src/40-cards.css?v=1.1.0");
-@import url("../src/50-details.css?v=1.1.0");
-@import url("../src/60-ui.css?v=1.1.0");
-@import url("../src/90-responsive.css?v=1.1.0");
+@import url("../src/00-tokens.css?v=0.0.1");
+@import url("../src/05-foundation.css?v=0.0.1");
+@import url("../src/10-background.css?v=0.0.1");
+@import url("../src/20-header.css?v=0.0.1");
+@import url("../src/30-home.css?v=0.0.1");
+@import url("../src/40-cards.css?v=0.0.1");
+@import url("../src/45-overlay.css?v=0.0.1");
+@import url("../src/50-details.css?v=0.0.1");
+@import url("../src/55-library.css?v=0.0.1");
+@import url("../src/60-ui.css?v=0.0.1");
+@import url("../src/65-search.css?v=0.0.1");
+@import url("../src/70-login.css?v=0.0.1");
+@import url("../src/75-player.css?v=0.0.1");
+@import url("../src/80-settings.css?v=0.0.1");
+@import url("../src/85-feedback.css?v=0.0.1");
+@import url("../src/90-responsive.css?v=0.0.1");
+@import url("../src/95-accessibility.css?v=0.0.1");

@@ -1,0 +1,21 @@
+/* CyberFlix 0.0.1 — login */
+#loginPage .readOnlyContent,
+#loginPage .padded-left,
+#loginPage .padded-right {
+    color: var(--cf-text) !important;
+}
+
+#loginPage .visualLoginForm,
+#loginPage form {
+    border-radius: var(--cf-radius-lg);
+}
+
+#loginPage .raised,
+#loginPage .emby-button {
+    border-radius: var(--cf-radius-sm) !important;
+}
+
+.userImage {
+    border-radius: 50% !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .46);
+}

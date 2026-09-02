@@ -1,0 +1,19 @@
+/* CyberFlix 0.0.1 — feedback, loading and status */
+.toast {
+    border: 1px solid var(--cf-border) !important;
+    border-radius: var(--cf-radius-md) !important;
+    background: rgba(8, 11, 17, .96) !important;
+    color: #fff !important;
+    box-shadow: 0 18px 44px rgba(0, 0, 0, .56);
+}
+
+.mdl-spinner__layer,
+.progressring-spiner {
+    color: var(--cf-cyan) !important;
+}
+
+.playedIndicator,
+.countIndicator {
+    background: linear-gradient(135deg, var(--cf-violet), var(--cf-magenta)) !important;
+    color: #fff !important;
+}

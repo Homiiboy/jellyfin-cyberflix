@@ -1,15 +1,25 @@
+/* CyberFlix 0.0.1 — design tokens */
 :root {
-    --cf-bg: #020305;
-    --cf-bg2: #05070b;
-    --cf-panel: rgba(8, 11, 16, 0.94);
+    --cf-bg-0: #020305;
+    --cf-bg-1: #06080d;
+    --cf-bg-2: #0b0e15;
+    --cf-surface: rgba(12, 15, 22, .92);
+    --cf-surface-soft: rgba(13, 17, 25, .72);
+    --cf-text: #f6f7fb;
+    --cf-text-soft: rgba(232, 236, 245, .72);
+    --cf-text-muted: rgba(218, 223, 234, .52);
+    --cf-border: rgba(255, 255, 255, .09);
+    --cf-border-strong: rgba(255, 255, 255, .18);
     --cf-cyan: #00eaff;
-    --cf-purple: #8b5cf6;
-    --cf-pink: #ff2bd6;
-    --cf-white: #f7f8fb;
-    --cf-text: rgba(247, 248, 251, 0.95);
-    --cf-muted: rgba(215, 220, 232, 0.58);
-    --cf-border: rgba(255, 255, 255, 0.08);
-    --cf-radius: 11px;
-    --cf-radius-large: 14px;
-    --cf-hover-delay: 110ms;
+    --cf-violet: #8b5cf6;
+    --cf-magenta: #ff2bd6;
+    --cf-danger: #ff5d73;
+    --cf-radius-sm: 8px;
+    --cf-radius-md: 12px;
+    --cf-radius-lg: 18px;
+    --cf-shadow-card: 0 12px 32px rgba(0, 0, 0, .44);
+    --cf-shadow-float: 0 30px 70px rgba(0, 0, 0, .78);
+    --cf-ease: cubic-bezier(.2, .8, .2, 1);
+    --cf-fast: 160ms;
+    --cf-normal: 240ms;
 }

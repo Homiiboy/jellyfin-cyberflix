@@ -1,0 +1,14 @@
+/*!
+ * CyberFlix for Jellyfin
+ * Version 1.1.0
+ * Modular runtime loader
+ */
+
+@import url("../src/00-tokens.css?v=1.1.0");
+@import url("../src/10-background.css?v=1.1.0");
+@import url("../src/20-header.css?v=1.1.0");
+@import url("../src/30-home.css?v=1.1.0");
+@import url("../src/40-cards.css?v=1.1.0");
+@import url("../src/50-details.css?v=1.1.0");
+@import url("../src/60-ui.css?v=1.1.0");
+@import url("../src/90-responsive.css?v=1.1.0");

@@ -1,74 +1,56 @@
-.mainDrawer {
-    background: linear-gradient(180deg, rgba(5,7,11,.99), rgba(2,3,5,.99)) !important;
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-    border-right: 1px solid rgba(0,234,255,.12);
-    box-shadow: 16px 0 45px rgba(0,0,0,.55);
+/* CyberFlix 0.0.1 — shared UI */
+.mainDrawer,
+.dialog,
+.actionSheet {
+    background: rgba(7, 9, 14, .96) !important;
+    border: 1px solid var(--cf-border);
+    backdrop-filter: blur(28px) saturate(1.1);
+    -webkit-backdrop-filter: blur(28px) saturate(1.1);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, .66);
+}
+
+.dialog,
+.actionSheet {
+    border-radius: var(--cf-radius-lg) !important;
 }
 
 .navMenuOption {
-    border-radius: 8px !important;
-    margin: 3px 8px !important;
-    transition: color 160ms ease, background-color 160ms ease, transform 160ms ease;
+    border-radius: var(--cf-radius-sm) !important;
+    transition: background-color var(--cf-fast) ease, color var(--cf-fast) ease, transform var(--cf-fast) ease;
 }
 
-.navMenuOption:hover {
-    color: var(--cf-cyan) !important;
-    background: rgba(0,234,255,.075) !important;
-    transform: translateX(5px);
+.navMenuOption:hover,
+.navMenuOption-selected {
+    background: rgba(0, 234, 255, .07) !important;
+    color: #fff !important;
 }
 
 .emby-input,
 .emby-textarea,
 .emby-select {
-    background: rgba(7,9,14,.96) !important;
-    color: #fff !important;
-    border: 1px solid rgba(0,234,255,.18) !important;
-    border-radius: 8px !important;
+    border: 1px solid var(--cf-border) !important;
+    border-radius: var(--cf-radius-sm) !important;
+    background: rgba(5, 7, 11, .86) !important;
+    color: var(--cf-text) !important;
 }
 
 .emby-input:focus,
 .emby-textarea:focus,
 .emby-select:focus {
-    border-color: var(--cf-cyan) !important;
-    box-shadow: 0 0 15px rgba(0,234,255,.15);
-}
-
-.dialog,
-.actionSheet {
-    background: linear-gradient(145deg, rgba(12,15,22,.985), rgba(3,4,7,.985)) !important;
-    backdrop-filter: blur(32px);
-    -webkit-backdrop-filter: blur(32px);
-    border: 1px solid rgba(0,234,255,.15);
-    border-radius: 13px !important;
-    box-shadow:
-        0 32px 85px rgba(0,0,0,.78),
-        -5px 0 25px rgba(0,234,255,.035),
-        5px 0 25px rgba(255,43,214,.025);
+    border-color: rgba(0, 234, 255, .55) !important;
+    box-shadow: 0 0 0 3px rgba(0, 234, 255, .08);
 }
 
 ::-webkit-scrollbar {
-    width: 7px;
-    height: 7px;
+    width: 8px;
+    height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--cf-bg);
+    background: var(--cf-bg-0);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, var(--cf-cyan), var(--cf-purple), var(--cf-pink));
     border-radius: 999px;
-}
-
-::selection {
-    background: rgba(255,43,214,.55);
-    color: #fff;
-}
-
-button:focus-visible,
-.emby-button:focus-visible {
-    outline: 2px solid var(--cf-cyan) !important;
-    outline-offset: 3px;
-    box-shadow: 0 0 18px rgba(0,234,255,.48) !important;
+    background: linear-gradient(180deg, var(--cf-cyan), var(--cf-violet), var(--cf-magenta));
 }

@@ -1,11 +1,9 @@
-/* Cards */
+/* CyberFlix 0.0.1 — cards. Artwork-safe: never replace card backgrounds. */
 .card {
     position: relative;
     z-index: 1;
     transform: translateZ(0);
-    transition:
-        transform 240ms cubic-bezier(.2,.8,.2,1) var(--cf-hover-delay),
-        filter 240ms ease var(--cf-hover-delay);
+    transition: transform var(--cf-normal) var(--cf-ease), filter var(--cf-normal) ease;
 }
 
 .cardBox,
@@ -13,198 +11,40 @@
     overflow: visible !important;
 }
 
-/* Keep Jellyfin artwork intact */
 .cardImageContainer {
-    position: relative;
-    border-radius: var(--cf-radius) !important;
     overflow: hidden !important;
-    outline: 1px solid rgba(255,255,255,.07);
+    border-radius: var(--cf-radius-md) !important;
+    outline: 1px solid rgba(255, 255, 255, .07);
     outline-offset: -1px;
-    box-shadow: 0 8px 24px rgba(0,0,0,.48);
-    transition:
-        outline-color 240ms ease,
-        box-shadow 240ms ease,
-        filter 240ms ease;
+    box-shadow: var(--cf-shadow-card);
+    transition: outline-color var(--cf-normal) ease, box-shadow var(--cf-normal) ease, filter var(--cf-normal) ease;
 }
 
 .cardContent,
 .blurhash-canvas,
 .cardOverlayContainer {
-    border-radius: var(--cf-radius) !important;
+    border-radius: var(--cf-radius-md) !important;
 }
 
-/* Smooth Netflix-style lift */
 .card-hoverable:hover,
-.card:hover,
-.card:focus-within {
-    z-index: 120;
-    transform: translateY(-10px) scale(1.055);
+.card:hover {
+    z-index: 80;
+    transform: translateY(-7px) scale(1.035);
 }
 
 .card-hoverable:hover .cardImageContainer,
-.card:hover .cardImageContainer,
-.card:focus-within .cardImageContainer {
-    outline-color: rgba(255,255,255,.32);
-    filter: brightness(1.045) saturate(1.07);
-    box-shadow:
-        0 32px 72px rgba(0,0,0,.86),
-        -4px 0 18px rgba(0,234,255,.08),
-        4px 0 18px rgba(255,43,214,.055);
+.card:hover .cardImageContainer {
+    outline-color: rgba(255, 255, 255, .23);
+    filter: brightness(1.035) saturate(1.04);
+    box-shadow: var(--cf-shadow-float), -3px 0 16px rgba(0, 234, 255, .05), 3px 0 16px rgba(255, 43, 214, .04);
 }
 
-/*
- * CYBERFLIX CINEMATIC OVERLAY
- * Dark at the bottom, soft in the middle, clear at the top.
- */
-.cardOverlayContainer {
-    overflow: hidden !important;
-    background:
-        linear-gradient(
-            to top,
-            rgba(2,3,5,1) 0%,
-            rgba(2,3,5,.99) 15%,
-            rgba(2,3,5,.94) 28%,
-            rgba(2,3,5,.78) 43%,
-            rgba(2,3,5,.48) 58%,
-            rgba(2,3,5,.18) 73%,
-            rgba(2,3,5,.03) 88%,
-            transparent 100%
-        ) !important;
-    box-shadow:
-        inset 0 -70px 90px rgba(0,0,0,.22),
-        inset 0 0 0 1px rgba(255,255,255,.018);
-    backdrop-filter: saturate(1.05);
-    -webkit-backdrop-filter: saturate(1.05);
-}
-
-/* Fine separator above the bottom action zone */
-.cardOverlayContainer::after {
-    content: "";
-    position: absolute;
-    left: 8%;
-    right: 8%;
-    bottom: .72em;
-    height: 1px;
-    pointer-events: none;
-    opacity: .55;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,255,255,.16) 20%,
-        rgba(255,255,255,.16) 80%,
-        transparent
-    );
-}
-
-/* Main play button */
-.cardOverlayContainer > .cardOverlayFab-primary {
-    background: #fff !important;
-    color: #050609 !important;
-    width: 3.65em !important;
-    height: 3.65em !important;
-    min-width: 3.65em !important;
-    min-height: 3.65em !important;
-    border: 0 !important;
-    border-radius: 50% !important;
-    padding: 0 !important;
-    box-shadow:
-        0 11px 30px rgba(0,0,0,.68),
-        0 0 0 1px rgba(255,255,255,.04);
-    transition:
-        transform 180ms cubic-bezier(.2,.8,.2,1),
-        background-color 180ms ease,
-        box-shadow 180ms ease !important;
-}
-
-.cardOverlayContainer > .cardOverlayFab-primary:hover,
-.cardOverlayContainer > .cardOverlayFab-primary:focus-visible {
-    transform: scale(1.10) !important;
-    background: #fff !important;
-    color: #050609 !important;
-    box-shadow:
-        0 15px 38px rgba(0,0,0,.76),
-        0 0 0 2px rgba(255,255,255,.10),
-        0 0 18px rgba(255,255,255,.12);
-}
-
-/* Secondary action buttons */
-.cardOverlayButton {
-    color: #fff !important;
-}
-
-.cardOverlayButtonIcon {
-    background: rgba(15,16,20,.90) !important;
-    color: rgba(255,255,255,.94) !important;
-    border: 1.6px solid rgba(255,255,255,.58);
-    border-radius: 50% !important;
-    box-shadow:
-        0 6px 18px rgba(0,0,0,.52),
-        inset 0 1px 0 rgba(255,255,255,.045);
-    backdrop-filter: blur(12px) saturate(1.1);
-    -webkit-backdrop-filter: blur(12px) saturate(1.1);
-    transition:
-        transform 160ms cubic-bezier(.2,.8,.2,1),
-        border-color 160ms ease,
-        background-color 160ms ease,
-        color 160ms ease,
-        box-shadow 160ms ease;
-}
-
-.cardOverlayButton:hover .cardOverlayButtonIcon,
-.cardOverlayButton:focus-visible .cardOverlayButtonIcon {
-    border-color: rgba(255,255,255,.95);
-    background: rgba(32,34,39,.98) !important;
-    color: #fff !important;
-    transform: scale(1.09);
-    box-shadow:
-        0 8px 20px rgba(0,0,0,.58),
-        0 0 0 1px rgba(255,255,255,.035);
-}
-
-/* CyberFlix color is reserved for keyboard / TV focus */
-.cardOverlayButton:focus-visible .cardOverlayButtonIcon,
-.cardOverlayContainer > .cardOverlayFab-primary:focus-visible {
-    outline: 2px solid var(--cf-cyan) !important;
-    outline-offset: 2px;
-    box-shadow:
-        0 0 0 3px rgba(0,234,255,.10),
-        0 0 18px rgba(0,234,255,.24),
-        0 10px 26px rgba(0,0,0,.62) !important;
-}
-
-/* Keep lower-right menu away from the edge */
-.cardOverlayButton-br {
-    right: .35em !important;
-    bottom: .35em !important;
-}
-
-/* Card text */
 .cardText {
-    color: rgba(247,248,251,.95) !important;
-    font-weight: 550;
-    line-height: 1.25;
-    padding-top: .5em;
-    transition: color 160ms ease, text-shadow 160ms ease;
+    color: var(--cf-text) !important;
+    font-weight: 600;
 }
 
-.card:hover .cardText:first-of-type,
-.card:focus-within .cardText:first-of-type {
-    color: #fff !important;
-    text-shadow: 0 2px 12px rgba(0,0,0,.35);
-}
-
-.cardText-secondary,
-.secondary,
-.secondaryText {
-    color: var(--cf-muted) !important;
-}
-
-/* Do not manipulate Jellyfin's actual poster image */
-.cardImage {
-    transition: none !important;
-}
-
-.card:hover .cardImage,
-.card:focus-within .cardImage {
+.cardImage,
+.card:hover .cardImage {
     transform: none !important;
 }

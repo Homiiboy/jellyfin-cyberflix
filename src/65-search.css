@@ -1,0 +1,16 @@
+/* CyberFlix 0.0.1 — search */
+.searchFields,
+.searchField {
+    color: var(--cf-text) !important;
+}
+
+.searchFields .emby-input,
+.searchField .emby-input {
+    background: rgba(8, 11, 17, .92) !important;
+    border-color: rgba(255, 255, 255, .12) !important;
+}
+
+.searchFields .emby-input:focus,
+.searchField .emby-input:focus {
+    border-color: rgba(0, 234, 255, .55) !important;
+}

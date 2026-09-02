@@ -1,32 +1,31 @@
+/* CyberFlix 0.0.1 — responsive */
+@media (max-width: 900px) {
+    .card-hoverable:hover,
+    .card:hover {
+        transform: translateY(-4px) scale(1.02);
+    }
+
+    .detailPagePrimaryContainer .itemName {
+        font-size: clamp(2rem, 8vw, 3.3rem) !important;
+    }
+}
+
 @media (max-width: 600px) {
     body::before {
-        background-size: 45px 45px;
+        background-size: 48px 48px;
     }
 
-    .homePage .sectionTitle {
-        font-size: 1.32em !important;
-    }
-
+    .card-hoverable:hover,
     .card:hover {
         transform: none;
     }
 
     .backdropImage {
-        transform: scale(1.03);
-        filter: brightness(.48) saturate(1.08);
+        transform: scale(1.02);
+        filter: brightness(.48) saturate(1.04);
     }
 
-    .detailPagePrimaryContainer .itemName {
-        font-size: 2.2em !important;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        transition-duration: .01ms !important;
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
+    .homePage .verticalSection {
+        margin-bottom: 1.45rem;
     }
 }

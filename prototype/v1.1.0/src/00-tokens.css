@@ -1,0 +1,15 @@
+:root {
+    --cf-bg: #020305;
+    --cf-bg2: #05070b;
+    --cf-panel: rgba(8, 11, 16, 0.94);
+    --cf-cyan: #00eaff;
+    --cf-purple: #8b5cf6;
+    --cf-pink: #ff2bd6;
+    --cf-white: #f7f8fb;
+    --cf-text: rgba(247, 248, 251, 0.95);
+    --cf-muted: rgba(215, 220, 232, 0.58);
+    --cf-border: rgba(255, 255, 255, 0.08);
+    --cf-radius: 11px;
+    --cf-radius-large: 14px;
+    --cf-hover-delay: 110ms;
+}

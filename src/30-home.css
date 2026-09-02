@@ -1,53 +1,34 @@
+/* CyberFlix 0.0.1 — home */
+.homePage {
+    padding-bottom: 6rem !important;
+}
+
 .homePage .verticalSection {
-    margin-bottom: 1.9em;
-}
-
-.homePage .sectionTitleContainer {
-    margin-bottom: .3em;
-}
-
-.sectionTitle {
-    color: var(--cf-text) !important;
-    font-weight: 700 !important;
-    letter-spacing: -.55px;
+    margin-bottom: 2rem;
 }
 
 .homePage .sectionTitle {
-    font-size: 1.55em !important;
+    color: var(--cf-text) !important;
+    font-size: clamp(1.25rem, 1.7vw, 1.65rem) !important;
+    font-weight: 720 !important;
 }
 
-.homePage .sectionTitle::first-letter {
-    color: var(--cf-cyan);
-    text-shadow: 0 0 10px rgba(0,234,255,.50);
-}
-
-.homePage .verticalSection:has(.itemsContainer[data-monitor*="videoplayback"]) .sectionTitle {
-    font-size: 1.7em !important;
-}
-
-@media (min-width: 900px) {
-    .homePage .verticalSection:has(.itemsContainer[data-monitor*="videoplayback"]) .overflowBackdropCard {
-        width: clamp(340px, 24vw, 450px) !important;
-    }
+.homePage .sectionTitleContainer {
+    margin-bottom: .35rem;
 }
 
 .homePage .verticalSection:first-of-type .cardText {
     display: none !important;
 }
 
-.homePage .verticalSection:first-of-type .card:hover {
-    transform: translateY(-7px) scale(1.035);
-}
-
 .itemProgressBar {
-    height: 6px !important;
-    background: rgba(255,255,255,.15) !important;
+    height: 5px !important;
+    background: rgba(255, 255, 255, .13) !important;
     border-radius: 999px !important;
     overflow: hidden !important;
 }
 
 .itemProgressBarForeground {
-    background: linear-gradient(90deg, var(--cf-pink), var(--cf-purple), var(--cf-cyan)) !important;
     border-radius: 999px !important;
-    box-shadow: 0 0 10px rgba(0,234,255,.55);
+    background: linear-gradient(90deg, var(--cf-magenta), var(--cf-violet), var(--cf-cyan)) !important;
 }
